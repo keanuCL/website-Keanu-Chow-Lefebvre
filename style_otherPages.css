@@ -1,0 +1,788 @@
+/* Global fade-in animation for all elements */
+* {
+    animation: fadeIn 0.4s ease-in forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+html{
+    /* background: rgb(100, 100, 100);      */
+     image-rendering: pixelated; 
+}
+
+@font-face {
+    font-family: 'Consolas-Regular'; /* Choose a descriptive name */
+    src: url('../fonts/Consolas-Regular.ttf') format('truetype'); /* Adjust path as needed */
+    /* Optional: Add font-weight and font-style if applicable */
+    /* font-weight: normal; */
+    /* font-style: normal; */
+}
+
+.hide-scrollbar {
+  overflow: auto; /* Ensures content can be scrolled */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and newer Edge */
+}
+
+/* Overall styling */
+/* h1{    
+    color:  rgb(69, 69, 69, 0);
+    width: 100%;
+    letter-spacing: 25px;
+    text-shadow: 2px 2px 3px rgb(69, 69, 69);
+    text-align: center;
+    font-family: 'Consolas-Regular';
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: 200;
+} */
+
+.sous-titre{
+    color: rgb(182, 182, 182);
+    width: 100%;
+    letter-spacing: 1px;
+    /* font-family: 'Consolas-Regular'; */
+    font-style: italic;
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
+}
+
+.txt{
+    color: white;
+    /*
+    background-color: white;
+    border: 2px solid rgb(31, 30, 30);
+    */
+    width: 100%;
+    padding: 10px; /* ← this indents the text inside the box */
+    box-sizing: border-box; /* keeps the total width at 100% including padding */
+    letter-spacing: 1px;
+    text-decoration: dotted;
+    font-family: 'Times new roman';
+    font-style: normal;
+}
+
+.inverted_txt{
+    color: black;
+    background-color: white;
+    border: 2px solid rgb(31, 30, 30);
+    width: 100%;
+    padding: 10px; /* ← this indents the text inside the box */
+    box-sizing: border-box; /* keeps the total width at 100% including padding */
+    letter-spacing: 1px;
+    text-decoration: dotted;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.small_txt{
+    color: rgb(193, 193, 193);
+    width: 100%;
+    letter-spacing: 1px;
+    text-decoration: dotted;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: smaller;
+}
+
+.center_small_txt{
+    text-align: center;
+    color: rgb(146, 146, 146);
+    width: 100%;
+    letter-spacing: 1px;
+    text-decoration: dotted;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: smaller;
+}
+    
+
+.center_text{
+    text-align: center;
+    justify-content: center;
+    color: black;
+    width: 100%;
+    letter-spacing: 1px;
+    text-decoration: dotted;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.gap {
+    height: 30px;
+    width: 100%;
+}
+
+.container_txt{
+
+}
+
+.image_container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr)); /* columns grow, min 150px */
+  gap: clamp(10px, 4vw, 50px);  /* gap scales with viewport, min 10px, max 50px */
+  max-width: 1000px;            /* optional: prevent overly wide layout */
+  margin: 0 auto;
+  width: 90%;                   /* responsive shrink on small screens */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.content img {
+  width: 100%;                 /* image fills grid column */
+  height: auto;                /* keeps original aspect ratio */
+  max-width: 400px;            /* optional cap */
+  max-height: 400px;           /* optional cap */
+  border: 0.2vw solid #e0b62c;
+  transition: border-color 0.3s, transform 0.3s ease-in-out;
+  image-rendering: pixelated;
+}
+
+.content:hover img {
+  /* border-color: #fcd915; */
+  /* transform: scale(0.98); */
+  opacity: 90%;
+}
+
+/* optional captions under each image */
+.content span {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+
+a.fixed {
+  position: fixed;
+  bottom: 8px;
+  left: 16px;
+  font-size: 20px;
+  /* color: white;
+  text-decoration: dotted; */
+  /* font-family: 'Times new roman';
+  font-style: normal;
+  font-size: 20px; */
+}
+
+/* Lys page styling*/
+
+.img-lsys_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* always 2 columns */
+    justify-content: center;
+    gap: 100px;
+    margin: 50px auto;
+    max-width: 1000px; /* keeps things from stretching too wide */
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+/* Medium screens */
+@media (max-width: 900px) {
+    .img-lsys_container {
+        gap: 20px;       /* smaller spacing */
+        max-width: 90%;  /* let the two columns expand more */
+    }
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+    .img-lsys_container {
+        gap: 10px;       /* very tight gaps */
+        max-width: 95%;  /* columns take nearly full width */
+    }
+}
+
+.audio_container {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    align-items: left;    /* center horizontally */
+    gap: 0px;              /* spacing between audio + link */
+    margin: 0px auto;      /* center the whole container */
+    max-width: 600px;       /* optional: keeps it from stretching too wide */
+}
+
+.img-lsys {
+    aspect-ratio: 1 / 1;               /* keeps them square */
+    width: 100%;                       /* fills the grid column */
+    /* border: 2px solid rgb(0, 0, 0);  */
+    background-color: transparent;
+    background-size: cover;            /* cover = fills box without stretching */
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: zoom-in;
+    image-rendering: pixelated;
+    /* border: 1px solid #d6c422; */
+}
+
+
+/* Overlay for dimming background */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 254, 254);
+  z-index: 998; /* Below the fullsize image */
+  transition: opacity 0.2s ease;
+}
+
+/* Update fullsize to appear above overlay */
+.fullsize {
+  /* border: 4px solid rgb(255, 226, 59); */
+  cursor: zoom-out;
+  display: none; /* Changed from block to none */
+  width: 600px;
+  height: 600px; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Above the overlay */
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: crisp-edges;
+  /* border: 1px solid #d6c422; */
+  /* image-rendering: pixelated; */
+}
+
+.toggle-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0,0,0,0.6) url('icon-swap.png') center/18px no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001; /* Above the zoomed image */
+  display: none; /* Hidden by default */
+}
+
+.fullsize.show .toggle-icon {
+  display: block; /* Show only when zoom is open */
+}
+
+.toggle-icon:hover {
+  background-color: rgba(255,255,255,0.8);
+}
+
+.lsys_black0 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys1.png');
+}
+
+.lsys_black1 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys2.png');
+}
+
+.lsys_black2 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys3.png');
+}
+
+.lsys_black3 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys4.png');
+}
+
+.lsys_black4 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys5.png');
+}
+
+.lsys_black5 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys6.png');
+} 
+
+.lsys_black6 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys7.png');
+}
+
+.lsys_black7 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys8.png');
+}
+
+.lsys_black8 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys9.png');
+}
+
+.lsys_black9 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys10.png');
+}
+
+.lsys_black10 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys11.png');
+}
+
+.lsys_black11 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys12.png');
+}
+
+.lsys_black12 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys13.png');
+}
+
+.lsys_black13 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys14.png');
+}
+
+.lsys_black14 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys15.png');
+}
+
+.lsys_black15 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys16.png');
+}
+
+.lsys_black16 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys17.png');
+}
+
+.lsys_black17 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys18.png');
+}
+
+.lsys_black18 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys19.png');
+}
+
+.lsys_black19 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys20.png');
+}
+
+.lsys_black20 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys21.png');
+} 
+
+.lsys_black21 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys22.png');
+} 
+
+.lsys_black22 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys23.png');
+}
+
+.lsys_black23 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys24.png');
+}
+
+.lsys_black24 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys25.png');
+}
+
+.lsys_black25 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys26.png');
+}
+
+.lsys_black26 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys27.png');
+}
+
+.lsys_black27 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys28.png');
+}
+
+.lsys_black28 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys29.png');
+}
+
+.lsys_black29 {  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys30.png');
+}
+
+.lsys_black30{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys31.png');
+}
+
+.lsys_black31{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys32.png');
+}
+
+.lsys_black32{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys33.png');
+}
+
+.lsys_black33{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys34.png');
+}
+
+.lsys_black34{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys35.png');
+}
+
+.lsys_black35{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys36.png');
+}
+
+.lsys_black36{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys37.png');
+}
+
+.lsys_black37{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys38.png');
+}
+
+.lsys_black38{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys39.png');
+}
+
+.lsys_black39{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys40.png');
+}
+
+.lsys_black40{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys41.png');
+}
+
+.lsys_black41{  
+    background-image: url('lsys images/alpha lsysS/alpha _lsys42.png');
+}
+
+/*
+
+.lsys_final1 {  
+    background-image: url('Ultimate_lsys/lsys_final1.png');
+}
+
+.lsys_final2 {  
+    background-image: url('lsys images/lsys_final2.png');
+}
+
+.lsys_final21 {  
+    background-image: url('lsys images/lsys_final2.1.png');
+}
+
+.lsys_final22 {  
+    background-image: url('lsys images/lsys_final2.2.png');
+}
+
+.lsys_final23 {  
+    background-image: url('lsys images/lsys_final2.3.png');
+}
+
+.lsys_final24 {  
+    background-image: url('lsys images/lsys_final2.4.png');
+}
+
+.lsys_final3 {  
+    background-image: url('lsys images/lsys_final3.png');
+}
+
+.lsys_final4 {  
+    background-image: url('lsys images/lsys_final4.png');
+}
+
+.lsys_final5 {  
+    background-image: url('lsys images/lsys_final5.png');
+}
+
+
+.lsys_final6 {  
+    background-image: url('lsys images/lsys_final6.png');
+}
+
+.lsys_final8 {  
+    background-image: url('lsys images/lsys_final7.png');
+}
+
+.lsys_final7 {  
+    background-image: url('lsys images/lsys_final8.png');
+}
+
+.lsys_final9 {  
+    background-image: url('lsys images/lsys_final9.png');
+}
+
+.lsys_final10 {  
+    background-image: url('lsys images/lsys_final10.png');
+}
+
+.lsys_final11 {  
+    background-image: url('lsys images/lsys_final11.png');
+}
+
+.lsys_final12 {  
+    background-image: url('lsys images/lsys_final12.png');
+}
+.lsys_final13 {  
+    background-image: url('lsys images/lsys_final13.png');
+}
+.lsys_final14 {  
+    background-image: url('lsys images/lsys_final14.png');
+}
+.lsys_final15 {  
+    background-image: url('lsys images/lsys_final15.png');
+}
+.lsys_final16 {  
+    background-image: url('lsys images/lsys_final16.png');
+}
+.lsys_final17 {  
+    background-image: url('lsys images/lsys_final17.png');
+}
+.lsys_final18 {  
+    background-image: url('lsys images/lsys_final18.png');
+}
+.lsys_final19 {  
+    background-image: url('lsys images/lsys_final19.png');
+}
+
+.lsys_final1i {  
+    background-image: url('lsys images/lsys_final1!.png');
+}
+
+.lsys_final2i {  
+    background-image: url('lsys images/lsys_final2!.png');
+}
+
+.lsys_final3i {  
+    background-image: url('lsys images/lsys_final3!.png');
+}
+
+.lsys_final4i {  
+    background-image: url('lsys images/lsys_final4!.png');
+}
+
+.lsys_final5i {  
+    background-image: url('lsys images/lsys_final5!.png');
+}
+
+
+.lsys_final6i {  
+    background-image: url('lsys images/lsys_final6!.png');
+}
+
+.lsys_final8i {  
+    background-image: url('lsys images/lsys_final7!.png');
+}
+
+.lsys_final7i {  
+    background-image: url('lsys images/lsys_final8!.png');
+}
+
+.lsys_final9i {  
+    background-image: url('lsys images/lsys_final9!.png');
+}
+
+.lsys_final10i {  
+    background-image: url('lsys images/lsys_final10!.png');
+}
+
+.lsys_final11i {  
+    background-image: url('lsys images/lsys_final11!.png');
+}
+
+.lsys_final12i {  
+    background-image: url('lsys images/lsys_final12!.png');
+}
+.lsys_final13i {  
+    background-image: url('lsys images/lsys_final13!.png');
+}
+.lsys_final14i {  
+    background-image: url('lsys images/lsys_final14!.png');
+}
+.lsys_final15i {  
+    background-image: url('lsys images/lsys_final15!.png');
+}
+.lsys_final16i {  
+    background-image: url('lsys images/lsys_final16!.png');
+}
+.lsys_final17i {  
+    background-image: url('lsys images/lsys_final17!.png');
+}
+.lsys_final18i {  
+    background-image: url('lsys images/lsys_final18!.png');
+}
+
+.explanation_dropDown_container {
+    display: flex;
+    justify-content: center;
+}
+
+.explanation_dropDown {
+display: inline-block;
+position: relative;
+justify-self: center;
+background: none;
+}
+
+/* Update explanation button */
+.explanation_button {
+  color: white;
+  background: black;
+  padding: 5px 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1; /* Ensure button stays above overlay */
+}
+
+/* Update explanation popup to appear above overlay */
+.explanation {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Above everything */
+  width: 80%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border: 2px solid #333;
+}
+
+.explanation.show { display: block; }
+
+  
+  /* show when hovered */
+
+  /* .explanation_dropDown:hover .explanation {
+    display: block;
+  }
+   */
+/* Works pages styling */
+
+.links_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers the whole group */
+    justify-self: center;
+    align-items: center;
+    gap: 3rem;               /* space between links */
+    width: 100%;             /* IMPORTANT */
+}
+
+a.works {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    color: rgb(94, 93, 93);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transform: translateX(calc(var(--i) * 40px));
+}
+
+
+
+
+/* Metal box page styling */
+
+.video_container{
+   display: flex; 
+   flex-direction: row;
+   justify-content: center; 
+   align-items:flex-start;
+   flex-wrap: wrap;
+   align-content: left;
+   gap: 10px; 
+}
+
+/*Raster page*/
+
+.zoom-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px auto;
+}
+
+.zoom-container {
+    width: 100%;
+    height: 50%;
+    max-width: 800px;
+    border: 3px solid #fcff48; 
+    overflow: hidden;
+    position: relative;
+}
+
+  
+.zoom-container .zoom-img {
+    display:block;
+    cursor: zoom-in;
+    user-select: none;
+    -webkit-user-drag: none;
+    transform-origin: 0 0;
+    transition: transform 0.4s ease;
+    background-color: white;
+    image-rendering: pixelated; 
+    image-rendering: crisp-edges;
+}
+
+.zoom-img{
+    height: 100%;
+    width: 100%;
+}
+
+.nav-btn {
+    background: none;
+    font-size: medium;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+}
+
+.nav-btn:hover {
+    background: #e0e0e04d;
+}
+
+/* random animations styling */
+
+.animations_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* always 2 columns */
+    justify-content: center;
+    gap: 60px;
+    margin: 60px auto;
+    max-width: 1000px; /* keeps things from stretching too wide */
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+.animations video{
+    aspect-ratio: 1 / 1;
+    width: 30vw;               /* keeps them square */
+    background-color: transparent;
+    background-size: cover;            /* cover = fills box without stretching */
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+/* ABOUT page styling */
+
+.about {
+    color:  rgb(69, 69, 69, 0);
+    width: 100%;
+    letter-spacing: 25px;
+    text-shadow: 2px 2px 3px rgb(69, 69, 69);
+    text-align: center;
+    font-family: 'Consolas-Regular';
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: 200;
+}

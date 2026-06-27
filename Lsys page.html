@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style_otherPages.css">
+    <title>Webpage name</title>
+  </head>
+
+    <body>
+
+ <p class="txt">
+          Drawings made using L-system recursive grammar:
+        </p>
+
+<!-- Dimming overlay -->
+<div id="overlay" class="overlay" onclick="closeZoom()"></div>
+<!-- Fullsize image container -->
+<div id="fullsize-container" class="fullsize" onclick="closeZoom()">
+  <!-- Toggle button for switching normal/inverted version -->
+  <div id="toggle-fullsize" class="toggle-icon" onclick="event.stopPropagation(); toggleFullsizeImage();"></div>
+</div>
+
+
+        <h1></h1>
+        
+        <p class="sous-titre"></p>
+
+        <div class="img-lsys_container">
+          <div class="img-lsys lsys_black0" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys1.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys1W.png"></div>
+          <div class="img-lsys lsys_black1" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys2.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys2W.png"></div>
+          <div class="img-lsys lsys_black2" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys3.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys3W.png"></div>
+          <div class="img-lsys lsys_black3" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys4.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys4W.png"></div>
+          <div class="img-lsys lsys_black4" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys5.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys5W.png"></div>
+          <div class="img-lsys lsys_black5" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys6.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys6W.png"></div>
+          <div class="img-lsys lsys_black6" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys7.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys7W.png"></div>
+          <div class="img-lsys lsys_black7" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys8.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys8W.png"></div>
+          <div class="img-lsys lsys_black8" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys9.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys9W.png"></div>
+          <div class="img-lsys lsys_black9" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys10.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys10W.png"></div>
+          <div class="img-lsys lsys_black10" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys11.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys11W.png"></div>
+          <div class="img-lsys lsys_black11" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys12.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys12W.png"></div>
+          <div class="img-lsys lsys_black12" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys13.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys13W.png"></div>
+          <div class="img-lsys lsys_black13" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys14.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys14W.png"></div>
+          <div class="img-lsys lsys_black14" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys15.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys15W.png"></div>
+          <div class="img-lsys lsys_black15" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys16.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys16W.png"></div>
+          <div class="img-lsys lsys_black16" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys17.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys17W.png"></div>
+          <div class="img-lsys lsys_black17" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys18.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys18W.png"></div>
+          <div class="img-lsys lsys_black18" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys19.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys19W.png"></div>
+          <div class="img-lsys lsys_black19" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys20.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys20W.png"></div>
+          <div class="img-lsys lsys_black20" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys21.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys21W.png"></div>
+          <div class="img-lsys lsys_black26" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys27.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys27W.png"></div>
+          <div class="img-lsys lsys_black21" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys22.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys22W.png"></div>
+          <div class="img-lsys lsys_black22" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys23.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys23W.png"></div>
+          <div class="img-lsys lsys_black23" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys24.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys24W.png"></div>
+          <div class="img-lsys lsys_black24" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys25.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys25W.png"></div>
+          <div class="img-lsys lsys_black25" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys26.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys26W.png"></div>
+          <div class="img-lsys lsys_black27" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys28.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys28W.png"></div>
+          <div class="img-lsys lsys_black28" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys29.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys29W.png"></div>
+          <div class="img-lsys lsys_black29" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys30.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys30W.png"></div>
+          <div class="img-lsys lsys_black30" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys31.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys31W.png"></div>
+          <div class="img-lsys lsys_black31" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys32.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys32W.png"></div>
+          <div class="img-lsys lsys_black32" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys33.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys33W.png"></div>
+          <div class="img-lsys lsys_black33" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys34.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys34W.png"></div>
+          <div class="img-lsys lsys_black34" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys35.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys35W.png"></div>
+          <div class="img-lsys lsys_black35" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys36.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys36W.png"></div>
+          <div class="img-lsys lsys_black36" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys37.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys37W.png"></div>
+          <div class="img-lsys lsys_black37" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys38.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys38W.png"></div>
+          <div class="img-lsys lsys_black38" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys39.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys39W.png"></div>
+          <div class="img-lsys lsys_black39" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys40.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys40W.png"></div>
+          <div class="img-lsys lsys_black40" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys41.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys41W.png"></div>
+          <div class="img-lsys lsys_black41" onclick="changeImage(this)" data-normal="lsys images/alpha lsysS/alpha _lsys42.png" data-inverted="lsys images/alpha lsysS/alpha white/alpha _lsys42W.png"></div>
+        </div>
+        
+        <div class="container_txt"></div>
+        <!-- <p class="txt">Created in 1968 by biologist Astrid Lindenmayer, L-Systems were originally designed with the intent to model the development of small (link:multicellular organisms) that we can find in fungi or algae, but it has since been used to model many other forms of life. The study of behaviour fascinates me as it often uncovers great truth about the inner workings of something. I see behavior as a reaction to the outside, it is a result of a relationship between the self and the environment. In many ways even the construction of our self is fractioned in the same way, a result of the web of relationships of different entities that inhabit our body. Observing the complex web of action and reaction of everything is a testament to the interconnectedness of life where everything seems to organise itself together in beautiful chaos.</p> -->
+        
+        <p class="gap"></p>
+
+        <!--Sonification-->
+        <!-- <p class="txt">I thought it would be fun to try find an alternate way to translate these formulas. So I decided to do this trough sound using the principle of additive synthesis. The idea would be to use a sort of pointer to spawn voices at different heights in the audible frequency spectrum. At the current location of F, the instruction to "spawn a voice(sine wave) here". The + or - are to move the pointer up or down the frequency range. Different characters like E or D are to create different types of voices (triangle or square waves). A range of other characters like +,-,*,%,$,... do things like shorthening or lenghtning the attack, decay or amplitude of the voice, finally the brackets work in a similar manner as they worked with drawing saving and returning to a certain location. </p> -->
+       <p class="gap"></p>
+
+       <p class="txt">Sonified L-System through additive synthesis </p>
+
+        <div class="audio_container">
+          <audio controls><source src="website content batch2/F+++F+++F.wav" type="audio/wav"></audio>
+          <a href="">video link</a>
+        </div>
+
+        <p class="gap"></p>
+
+
+        <script src="background_switch.js"></script>
+        <script src="lsys page.js"></script>
+         
+    </body>
+<!--Back button-->
+        <a href="works page.html" class="fixed">-Back-
+          <img src="path" alt>
+        </a>
+</html>
+
+
