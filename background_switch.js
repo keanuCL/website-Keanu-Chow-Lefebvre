@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set text color
   document.querySelectorAll(
-    "h1, p, a, .txt, .sous-titre, .small_txt, .center_text, .center_small_txt, .dropDown_text, .menuTexte, .content, a.fixed, .works"
+    "h1, p, a, .txt, .sous-titre, .small_txt, .center_text, .center_small_txt, .dropDown_text, .menuTexte, .content, a.fixed, .works, .about"
   ).forEach(el => {
     el.style.setProperty('color', textColor, 'important');
   });
